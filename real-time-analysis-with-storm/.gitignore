@@ -1,0 +1,8 @@
+
+# Created by .ignore support plugin (hsz.mobi)
+/target/
+
+# eclipse project files
+/.settings/
+.classpath
+.project

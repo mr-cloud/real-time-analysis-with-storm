@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>twitter map</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+  <!-- APP js -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- add d3 from web -->
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://datamaps.github.io/scripts/datamaps.usa.js?v=1"></script>
+<script src="\static\countyLookup.js"></script>
+  
+</head>
+
+<style>
+
+.counties {
+  fill: none;
+}
+
+.states {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+}
+
+.q0-9 { fill:rgb(247,251,255); }
+.q1-9 { fill:rgb(222,235,247); }
+.q2-9 { fill:rgb(198,219,239); }
+.q3-9 { fill:rgb(158,202,225); }
+.q4-9 { fill:rgb(107,174,214); }
+.q5-9 { fill:rgb(66,146,198); }
+.q6-9 { fill:rgb(33,113,181); }
+.q7-9 { fill:rgb(8,81,156); }
+.q8-9 { fill:rgb(8,48,107); }
+
+</style>
+
+<body>
+  <h1 style="color:#55ACEE">Udacity and Twitter bring you Real-Time Analytics with Storm</h1>
+    <p style="color:#55ACEE">
+      &nbsp<img src="/static/Udacity-logoRobot.png" alt="Smiley face" height="60" width="60">
+      &nbsp<img src="/static/Twitter_logo_white.png" alt="Twitter logo" height="60" width="60">
+            &nbsp<img src="/static/argentina.jpg" alt="argentina national day logo" height="60" width="60">
+      
+      &nbsp&nbspLeo's Word Cloud!!!</p>
+<div id="container" style="position: relative; width: 1366px; height: 768px;"></div>
+    <script src="/static/app-twitter-map.js"></script>
+
+</body>
+
+</html>
