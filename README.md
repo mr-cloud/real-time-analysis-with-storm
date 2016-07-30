@@ -11,4 +11,8 @@ use storm to analize the twitter stream and visualize the results with map and w
     * light web framework.
   * *d3*
     * use word cloud and map for data visualization.
-    
+* **directory introduction**
+  * *src*
+    * java source file.
+  * *viz*
+    * web aplication.
