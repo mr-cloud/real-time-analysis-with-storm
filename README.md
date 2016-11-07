@@ -15,4 +15,4 @@ use storm to analize the twitter stream and visualize the results with map and w
   * *src*
     * java source file.
   * *viz*
-    * web aplication.
+    * web application.
