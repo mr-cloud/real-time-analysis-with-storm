@@ -57,6 +57,10 @@ class TopNTweetTopology
 
 
 //    builder.setBolt("intermediate-rankings-bolt", new IntermediateRankingsBolt(), 15).fieldsGrouping("count-bolt", new Fields("word", "count"));
+    // 因为rolling-count-bolt的分流方式是fieldsGrouping，因此同一个tweet-word只会出现在一个task中，
+    // 则输出stream的<"word", "count">与<"word">等价，于是同一个tweet-word也只会出现在同一个intermediate-rankings-bolt task中，
+    // intermediate-rankings-bolt中没有排上号的tweet-word是不会出现在total-rankings-bolt的top-N中的。
+    // 关键算法在于rolling counter基于滑动窗口的设计，至少保存top-N个槽的计数统计且可能成为top-N的单词被保存（例如top-k space saving算法）。
     builder.setBolt("intermediate-rankings-bolt", new IntermediateRankingsBolt(), 15).fieldsGrouping("rolling-count-bolt", new Fields("word", "count"));
 
     builder.setBolt("total-rankings-bolt", new TotalRankingsBolt(), 1).globalGrouping("intermediate-rankings-bolt");
