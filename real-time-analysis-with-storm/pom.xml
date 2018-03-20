@@ -91,7 +91,7 @@
   </dependencies>
 
   <build>
-    <sourceDirectory>src/jvm</sourceDirectory>
+    <!--<sourceDirectory>src/jvm</sourceDirectory>-->
     <plugins>
       <!--
         Bind the maven-assembly-plugin to the package phase

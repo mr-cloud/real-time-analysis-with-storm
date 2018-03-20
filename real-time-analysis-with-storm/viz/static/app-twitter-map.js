@@ -13,7 +13,7 @@ var colors =
       "#FFFFCC",
       "#FFFF99",
       "#FFFF66",
-      "#FFFF00",
+      "#FFFF33",
       "#FFFF00"];
       var source = new EventSource('/stream');
       var hashSentence = {};

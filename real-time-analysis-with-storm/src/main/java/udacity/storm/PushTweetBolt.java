@@ -97,7 +97,8 @@ public class PushTweetBolt extends BaseRichBolt
     // tell storm the schema of the output tuple for this spout
     // tuple consists of a two columns called 'word' and 'count'
 
-    // declare the first column 'word', second column 'count'
+    // declare the first column 'tweet', second column 'hot'
+	  // Filter out tweets with hot-indication carrying recent hot tag.
     outputFieldsDeclarer.declare(new Fields(Constant.PUSH_TWEET_BOLT_FIELD_0, Constant.PUSH_TWEET_BOLT_FIELD_1));
   }
 }
