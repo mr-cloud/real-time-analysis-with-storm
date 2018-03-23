@@ -38,10 +38,14 @@ public class NthLastModifiedTimeTracker {
   }
 
   public int secondsSinceOldestModification() {
+    // Get the head in the circular queue.
     long modifiedTimeMillis = ((Long) lastModifiedTimesMillis.get()).longValue();
     return (int) ((now() - modifiedTimeMillis) / MILLIS_IN_SEC);
   }
 
+  /**
+   * Mark the new blank slot as it is tracked now.
+   */
   public void markAsModified() {
     updateLastModifiedTime();
   }

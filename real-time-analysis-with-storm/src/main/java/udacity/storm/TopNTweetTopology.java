@@ -51,6 +51,13 @@ class TopNTweetTopology
     // attach the count bolt using fields grouping - parallelism of 15
     //builder.setBolt("count-bolt", new CountBolt(), 15).fieldsGrouping("parse-tweet-bolt", new Fields("tweet-word"));
 
+
+    /*
+    Both rolling-count-bolt and intermediate-rankings-bolt use fieldsGrouping
+    to ensure that the same word can be counted cumulatively and sorted with the cumulative counting.
+    total-rankings-bolt should keep pace with intermediate-rankings-bolt.
+     */
+
     // attach rolling count bolt using fields grouping - parallelism of 5
     builder.setBolt("rolling-count-bolt", new RollingCountBolt(30, 10), 5).fieldsGrouping("parse-tweet-bolt", new Fields("tweet-word"));
 //    builder.setBolt("count-bolt", new CountBolt(), 15).fieldsGrouping("parse-tweet-bolt", new Fields("tweet-word"));

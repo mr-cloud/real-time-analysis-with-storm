@@ -138,8 +138,8 @@ public class RankableObjectWithFields implements Rankable, Serializable {
 
   /**
    * Note: We do not defensively copy the wrapped object and any accompanying fields.  We do guarantee, however,
-   * do return a defensive (shallow) copy of the List object that is wrapping any accompanying fields.
-   *并不返回Rankable浅拷贝，但是Rankable内部fileds list使用浅拷贝。
+   * do return a defensive copy of the List object that is wrapping any accompanying fields.
+   * 返回Rankable的深拷贝（即防御性复制），但是Rankable内部fileds list使用浅拷贝。
    * @return
    */
   @Override

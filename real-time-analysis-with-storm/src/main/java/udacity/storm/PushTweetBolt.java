@@ -16,11 +16,9 @@ import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
 import backtype.storm.utils.Utils;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 import udacity.storm.tools.*;
-import java.util.List;
 
 /**
  * A bolt that counts the words that it receives
@@ -63,6 +61,9 @@ public class PushTweetBolt extends BaseRichBolt
 
 			    // now split the tweet into tokens
 			    String[] tokens = tweet.split(delims);
+
+			    // FIXME fiund the hottest tag with tokens set and tags sorted list.
+			    // HashSet<String> tokensSet = new HashSet<String>(Arrays.asList(tokens));
 
 			    for (String token: tokens) {
 			    	if(token.startsWith("#")){

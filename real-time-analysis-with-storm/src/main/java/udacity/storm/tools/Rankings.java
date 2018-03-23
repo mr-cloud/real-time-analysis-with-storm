@@ -100,7 +100,7 @@ public class Rankings implements Serializable {
   }
 
   /*
-   * 由于count是实时不断的累计计数，需要不断更新已存在的单词的词频数，
+   * 由于rolling-count是实时不断的累计计数，需要不断更新已存在的单词的词频数，
    * 所以需要replace
    */
   private void addOrReplace(Rankable r) {
@@ -140,6 +140,7 @@ public class Rankings implements Serializable {
 
   /**
    * Removes ranking entries that have a count of zero.
+   * Use iterator is a better choice.
    */
   public void pruneZeroCounts() {
     int i = 0;
